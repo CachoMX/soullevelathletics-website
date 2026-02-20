@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CredibilityBar from '../components/CredibilityBar.astro';
+import AboutPreview from '../components/AboutPreview.astro';
+import ServicesGrid from '../components/ServicesGrid.astro';
+import AudienceSection from '../components/AudienceSection.astro';
+import TestimonialCarousel from '../components/TestimonialCarousel.tsx';
+import Gallery from '../components/Gallery.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<BaseLayout>
+  <Hero />
+  <CredibilityBar />
+  <AboutPreview />
+  <ServicesGrid />
+  <AudienceSection />
+
+  <!-- Testimonials Section -->
+  <section class="section-padding bg-brand-surface" aria-label="Testimonials">
+    <div class="container-custom mx-auto">
+      <div class="text-center mb-16 reveal">
+        <p class="font-subheading text-sm uppercase tracking-[0.2em] text-brand-gold mb-4">
+          What Athletes Say
+        </p>
+        <h2 class="text-h2 text-white mb-4">
+          Real Results. Real Feedback.
+        </h2>
+      </div>
+      <div class="reveal">
+        <TestimonialCarousel client:visible />
+      </div>
+      <div class="text-center mt-12 reveal">
+        <a href="/testimonials" class="btn-secondary btn-small">
+          Read All Reviews
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Gallery />
+  <CTABanner />
+</BaseLayout>

@@ -1,0 +1,25 @@
+---
+const stats = [
+  { value: 'NBA', label: 'G League Experience' },
+  { value: 'NAIA', label: 'All-American 2017' },
+  { value: '7+', label: 'Countries Played' },
+  { value: '10+', label: 'Years Experience' },
+];
+---
+
+<section class="relative py-8 md:py-12 bg-brand-surface border-y border-white/5" aria-label="Credentials">
+  <div class="container-custom mx-auto px-4 md:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+      {stats.map((stat, i) => (
+        <div class="text-center reveal" style={`transition-delay: ${i * 0.1}s;`}>
+          <p class="font-heading text-3xl md:text-4xl text-brand-gold mb-1">
+            {stat.value}
+          </p>
+          <p class="font-subheading text-xs md:text-sm uppercase tracking-wider text-brand-gray">
+            {stat.label}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

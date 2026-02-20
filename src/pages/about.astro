@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const timeline = [
+  { year: '2017', event: 'NAIA All-American Honors', description: 'Earned All-American recognition for outstanding collegiate basketball performance.' },
+  { year: '2017–2019', event: 'International Professional Career', description: 'Competed professionally in Mexico, Canada, Spain, Indonesia, and Malta — training with and against elite talent worldwide.' },
+  { year: '2020', event: 'NBA G League', description: 'Reached the highest level of domestic professional basketball development, competing in the NBA G League.' },
+  { year: '2020+', event: 'Soul Level Athletics Founded', description: 'Transitioned from playing to coaching, bringing years of professional experience directly to the next generation of athletes.' },
+];
+---
+
+<BaseLayout
+  title="About Coach Chris Johnson"
+  description="Learn about Coach Chris Johnson — NAIA All-American, NBA G League player, and founder of Soul Level Athletics. Professional experience across 7+ countries."
+>
+  <!-- Page Header -->
+  <section class="pt-32 pb-16 md:pt-40 md:pb-20 bg-brand-black">
+    <div class="container-custom mx-auto px-4 md:px-8">
+      <p class="font-subheading text-sm uppercase tracking-[0.2em] text-brand-gold mb-4 reveal">
+        Our Story
+      </p>
+      <h1 class="text-h1 text-white mb-6 reveal" style="transition-delay: 0.1s;">
+        Meet Coach <span class="gold-gradient-text">Chris Johnson</span>
+      </h1>
+      <p class="text-white/60 text-lg max-w-3xl reveal" style="transition-delay: 0.2s;">
+        A professional athlete turned elite coach with a mission to develop complete athletes through proven, real-world training methods.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main About Content -->
+  <section class="section-padding bg-brand-black">
+    <div class="container-custom mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <!-- Image Column -->
+        <div class="reveal">
+          <div class="relative sticky top-28">
+            <div class="absolute -inset-4 bg-gradient-to-br from-brand-gold/20 to-transparent rounded-2xl blur-xl"></div>
+            <img
+              src="/images/coach/johnson1.jpg"
+              alt="Coach Chris Johnson"
+              class="relative rounded-2xl w-full object-cover aspect-[3/4] shadow-2xl"
+              loading="eager"
+            />
+          </div>
+        </div>
+
+        <!-- Content Column -->
+        <div class="space-y-8">
+          <!-- Bio -->
+          <div class="reveal">
+            <h2 class="text-h3 text-white mb-6 font-heading uppercase tracking-wider">
+              The Journey
+            </h2>
+            <div class="space-y-4 text-white/70 text-lg leading-relaxed">
+              <p>
+                Chris Johnson's basketball journey took him from earning <strong class="text-white">NAIA All-American honors in 2017</strong> to competing on professional courts across the globe. He played professionally in <strong class="text-white">Mexico, Canada, Spain, Indonesia, and Malta</strong> — experiencing different systems, coaching styles, and levels of competition that shaped his unique approach to training.
+              </p>
+              <p>
+                In <strong class="text-white">2020</strong>, Chris reached the pinnacle of domestic professional development, competing in the <strong class="text-white">NBA G League</strong>. Training alongside and against some of the most talented players in the world gave him an understanding of what it takes to perform at the highest level — and what separates good players from great ones.
+              </p>
+              <p>
+                Today, Chris brings that same intensity, discipline, and game-tested knowledge to every athlete he coaches. Whether you're a youth player learning fundamentals or a college athlete preparing for the next level, Coach Chris delivers training rooted in real professional experience.
+              </p>
+            </div>
+          </div>
+
+          <!-- Philosophy -->
+          <div class="reveal">
+            <h2 class="text-h3 text-white mb-6 font-heading uppercase tracking-wider">
+              Training Philosophy
+            </h2>
+            <div class="space-y-4 text-white/70 text-lg leading-relaxed">
+              <p>
+                <strong class="text-brand-gold">No fluff. No shortcuts.</strong> Soul Level Athletics is built on the belief that real development comes from real work. Every drill, every exercise, and every session is designed with purpose — informed by what actually works at the professional level.
+              </p>
+              <p>
+                The goal isn't to create athletes who look good in practice. It's to develop <strong class="text-white">complete players who dominate in games</strong> — athletes who can think, react, and perform when it matters most.
+              </p>
+            </div>
+          </div>
+
+          <!-- What Sets Us Apart -->
+          <div class="reveal">
+            <h2 class="text-h3 text-white mb-6 font-heading uppercase tracking-wider">
+              What Sets Us Apart
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { title: 'Pro Experience', desc: 'Training built on real professional playing experience, not just textbook theory.' },
+                { title: 'Global Perspective', desc: 'Exposure to multiple offensive and defensive systems from 7+ countries.' },
+                { title: 'Complete Development', desc: 'We train the mind and body — skills, IQ, conditioning, and mental toughness.' },
+                { title: 'Personalized Approach', desc: 'Every athlete gets training tailored to their goals, position, and skill level.' },
+              ].map((item) => (
+                <div class="p-5 rounded-xl bg-brand-surface border border-white/5">
+                  <h3 class="font-heading text-sm uppercase tracking-wider text-brand-gold mb-2">{item.title}</h3>
+                  <p class="text-white/60 text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Timeline -->
+  <section class="section-padding bg-brand-surface" aria-label="Career Timeline">
+    <div class="container-custom mx-auto">
+      <div class="text-center mb-16 reveal">
+        <p class="font-subheading text-sm uppercase tracking-[0.2em] text-brand-gold mb-4">
+          Career Highlights
+        </p>
+        <h2 class="text-h2 text-white">
+          From Pro Courts to Coaching Courts
+        </h2>
+      </div>
+
+      <div class="max-w-3xl mx-auto">
+        {timeline.map((item, i) => (
+          <div class="relative flex gap-6 pb-12 last:pb-0 reveal" style={`transition-delay: ${i * 0.1}s;`}>
+            {/* Timeline line */}
+            <div class="flex flex-col items-center">
+              <div class="w-4 h-4 rounded-full bg-brand-gold flex-shrink-0 mt-1"></div>
+              {i < timeline.length - 1 && (
+                <div class="w-px flex-1 bg-gradient-to-b from-brand-gold/50 to-transparent mt-2"></div>
+              )}
+            </div>
+            {/* Content */}
+            <div class="pb-8">
+              <p class="font-heading text-brand-gold text-sm uppercase tracking-wider mb-1">
+                {item.year}
+              </p>
+              <h3 class="font-heading text-xl uppercase tracking-wider text-white mb-2">
+                {item.event}
+              </h3>
+              <p class="text-white/60">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

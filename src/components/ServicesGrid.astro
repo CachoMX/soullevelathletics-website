@@ -1,0 +1,52 @@
+---
+import { services } from '../data/services';
+---
+
+<section class="section-padding bg-brand-surface" id="services" aria-label="Training Programs">
+  <div class="container-custom mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16 reveal">
+      <p class="font-subheading text-sm uppercase tracking-[0.2em] text-brand-gold mb-4">
+        What We Offer
+      </p>
+      <h2 class="text-h2 text-white mb-4">
+        Training Programs
+      </h2>
+      <p class="text-white/60 max-w-2xl mx-auto text-lg">
+        Comprehensive training built on real professional experience. Every program is designed to develop complete athletes — not just good drill players.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map((service, i) => (
+        <a
+          href={`/services/${service.slug}`}
+          class="card group p-8 reveal block"
+          style={`transition-delay: ${i * 0.1}s;`}
+        >
+          <!-- Icon -->
+          <span class="text-4xl mb-4 block" aria-hidden="true">{service.icon}</span>
+
+          <!-- Title -->
+          <h3 class="font-heading text-xl uppercase tracking-wider text-white mb-3 group-hover:text-brand-gold transition-colors duration-300">
+            {service.title}
+          </h3>
+
+          <!-- Description -->
+          <p class="text-white/60 text-sm leading-relaxed mb-6">
+            {service.description}
+          </p>
+
+          <!-- Link -->
+          <span class="inline-flex items-center gap-2 text-brand-gold text-sm font-subheading uppercase tracking-wider group-hover:gap-3 transition-all duration-300">
+            Learn More
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+---
+
+---
+
+<section class="section-padding bg-brand-black" aria-label="About Coach Chris">
+  <div class="container-custom mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Image -->
+      <div class="reveal">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-br from-brand-gold/20 to-transparent rounded-2xl blur-xl"></div>
+          <img
+            src="/images/coach/johnson1.jpg"
+            alt="Coach Chris Johnson - Founder of Soul Level Athletics"
+            class="relative rounded-2xl w-full max-w-md mx-auto lg:mx-0 object-cover aspect-[3/4] shadow-2xl"
+            loading="lazy"
+            width="600"
+            height="800"
+          />
+          <!-- Floating badge -->
+          <div class="absolute -bottom-4 -right-4 md:bottom-4 md:right-4 bg-brand-gold text-brand-black px-5 py-3 rounded-xl shadow-lg">
+            <p class="font-heading text-lg uppercase">Pro Athlete</p>
+            <p class="font-body text-xs">Turned Elite Coach</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="reveal" style="transition-delay: 0.2s;">
+        <p class="font-subheading text-sm uppercase tracking-[0.2em] text-brand-gold mb-4">
+          Meet Your Coach
+        </p>
+        <h2 class="text-h2 text-white mb-6">
+          Coach Chris Johnson
+        </h2>
+        <p class="text-white/70 text-lg leading-relaxed mb-6">
+          A former <strong class="text-white">NAIA All-American</strong> and <strong class="text-white">NBA G League</strong> player, Chris has competed professionally across <strong class="text-white">Mexico, Canada, Spain, Indonesia, Malta</strong>, and beyond. He's trained with and against elite talent on the world stage.
+        </p>
+        <p class="text-white/70 text-lg leading-relaxed mb-8">
+          Now he brings that same level of intensity, knowledge, and real-game experience to every athlete he trains. No fluff. No shortcuts. Just proven methods from someone who's been in the trenches.
+        </p>
+
+        <div class="flex flex-wrap gap-3 mb-8">
+          {['NBA G League', 'NAIA All-American', 'International Pro', 'Elite Coaching'].map((tag) => (
+            <span class="px-4 py-2 rounded-full border border-brand-gold/30 text-brand-gold text-xs font-subheading uppercase tracking-wider">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <a href="/about" class="btn-secondary">
+          Full Story
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

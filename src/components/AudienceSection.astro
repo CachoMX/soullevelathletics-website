@@ -1,0 +1,66 @@
+---
+const audiences = [
+  {
+    title: 'Youth Athletes',
+    age: 'Ages 8–13',
+    description: 'Building strong fundamentals, confidence, and a love for the game through age-appropriate training that challenges and inspires.',
+    icon: '⭐',
+  },
+  {
+    title: 'High School Players',
+    age: 'Ages 14–18',
+    description: 'Competitive-edge training designed to prepare athletes for varsity play, showcase events, and college recruitment.',
+    icon: '🎯',
+  },
+  {
+    title: 'College Athletes',
+    age: 'Ages 18–22',
+    description: 'Elite-level performance training from someone who has been there. Sharpen your skills to compete at the highest collegiate level.',
+    icon: '🏆',
+  },
+  {
+    title: 'Adult Athletes',
+    age: 'Ages 22+',
+    description: 'Whether you are training for a league, staying fit, or chasing a pro career — we will build a program around your goals.',
+    icon: '💎',
+  },
+];
+---
+
+<section class="section-padding bg-brand-black" aria-label="Who this is for">
+  <div class="container-custom mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-16 reveal">
+      <p class="font-subheading text-sm uppercase tracking-[0.2em] text-brand-gold mb-4">
+        Who This Is For
+      </p>
+      <h2 class="text-h2 text-white mb-4">
+        Every Level. Every Age. One Standard.
+      </h2>
+      <p class="text-white/60 max-w-2xl mx-auto text-lg">
+        Whether you are just starting out or competing at the highest level, Soul Level Athletics meets you where you are and pushes you further.
+      </p>
+    </div>
+
+    <!-- Audience Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {audiences.map((audience, i) => (
+        <div
+          class="relative group p-8 rounded-xl border border-white/5 bg-gradient-to-b from-brand-surface to-brand-black hover:border-brand-gold/30 transition-all duration-500 reveal"
+          style={`transition-delay: ${i * 0.1}s;`}
+        >
+          <span class="text-3xl mb-4 block" aria-hidden="true">{audience.icon}</span>
+          <h3 class="font-heading text-lg uppercase tracking-wider text-white mb-1">
+            {audience.title}
+          </h3>
+          <p class="text-brand-gold text-xs font-subheading uppercase tracking-wider mb-4">
+            {audience.age}
+          </p>
+          <p class="text-white/60 text-sm leading-relaxed">
+            {audience.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

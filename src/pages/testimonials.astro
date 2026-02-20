@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { testimonials } from '../data/testimonials';
+import CTABanner from '../components/CTABanner.astro';
+
+function getStars(rating: number): string[] {
+  return Array.from({ length: rating }, () => '★');
+}
+---
+
+<BaseLayout
+  title="Testimonials"
+  description="Read what athletes and parents say about training with Coach Chris Johnson at Soul Level Athletics. Real reviews from real athletes."
+>
+  <!-- Page Header -->
+  <section class="pt-32 pb-16 md:pt-40 md:pb-20 bg-brand-black">
+    <div class="container-custom mx-auto px-4 md:px-8">
+      <p class="font-subheading text-sm uppercase tracking-[0.2em] text-brand-gold mb-4 reveal">
+        Reviews & Testimonials
+      </p>
+      <h1 class="text-h1 text-white mb-6 reveal" style="transition-delay: 0.1s;">
+        What Our <span class="gold-gradient-text">Athletes Say</span>
+      </h1>
+      <p class="text-white/60 text-lg max-w-3xl reveal" style="transition-delay: 0.2s;">
+        Don't just take our word for it. Hear from the athletes and parents who have experienced the Soul Level difference.
+      </p>
+    </div>
+  </section>
+
+  <!-- Testimonials Grid -->
+  <section class="section-padding bg-brand-black">
+    <div class="container-custom mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {testimonials.map((testimonial, i) => (
+          <div
+            class="card p-8 reveal"
+            style={`transition-delay: ${i * 0.1}s;`}
+          >
+            <!-- Stars -->
+            <div class="flex gap-1 mb-4">
+              {getStars(testimonial.rating).map(() => (
+                <span class="text-brand-gold text-lg">★</span>
+              ))}
+            </div>
+
+            <!-- Quote -->
+            <blockquote class="relative mb-6">
+              <svg
+                class="absolute -top-2 -left-2 w-8 h-8 text-brand-gold/10"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z" />
+              </svg>
+              <p class="text-white/80 text-lg leading-relaxed italic pl-4">
+                "{testimonial.text}"
+              </p>
+            </blockquote>
+
+            <!-- Author -->
+            <div class="flex items-center gap-3 pl-4">
+              <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center">
+                <span class="font-heading text-brand-gold text-sm">
+                  {testimonial.name.charAt(0)}
+                </span>
+              </div>
+              <div>
+                <p class="font-heading text-sm uppercase tracking-wider text-white">
+                  {testimonial.name}
+                </p>
+                <p class="text-white/50 text-xs">
+                  {testimonial.role}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA after testimonials -->
+      <div class="text-center mt-16 reveal">
+        <p class="text-white/60 text-lg mb-6">
+          Ready to write your own success story?
+        </p>
+        <a href="/contact" class="btn-primary">
+          Start Training Today
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>
