@@ -8,7 +8,12 @@ import vercel from '@astrojs/vercel';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://soullevelathletics.com',
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: false
+    },
+    edgeMiddleware: false
+  }),
   integrations: [
     react(),
     tailwind(),
