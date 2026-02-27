@@ -3,6 +3,18 @@ import sgMail from '@sendgrid/mail';
 
 export const prerender = false;
 
+// Handle OPTIONS request for CORS preflight
+export const OPTIONS: APIRoute = async () => {
+  return new Response(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  });
+};
+
 export const POST: APIRoute = async ({ request }) => {
   try {
     // Validate SendGrid API key
