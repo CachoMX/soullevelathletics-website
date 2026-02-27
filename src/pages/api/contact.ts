@@ -29,14 +29,14 @@ export const POST: APIRoute = async ({ request }) => {
 
     sgMail.setApiKey(apiKey);
 
-    // Parse form data
-    const formData = await request.formData();
-    const name = formData.get('name') as string;
-    const email = formData.get('email') as string;
-    const phone = formData.get('phone') as string;
-    const service = formData.get('service') as string;
-    const preferredTime = formData.get('preferred_time') as string;
-    const message = formData.get('message') as string;
+    // Parse JSON data
+    const body = await request.json();
+    const name = body.name as string;
+    const email = body.email as string;
+    const phone = body.phone as string;
+    const service = body.service as string;
+    const preferredTime = body.preferred_time as string;
+    const message = body.message as string;
 
     // Validate required fields
     if (!name || !email || !phone) {

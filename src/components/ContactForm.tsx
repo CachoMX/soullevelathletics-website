@@ -10,12 +10,18 @@ export default function ContactForm() {
     setStatus('submitting');
 
     const form = e.currentTarget;
-    const data = new FormData(form);
+    const formData = new FormData(form);
+
+    // Convert FormData to JSON to avoid CSRF protection
+    const data = Object.fromEntries(formData.entries());
 
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
-        body: data,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
         credentials: 'same-origin',
       });
 
