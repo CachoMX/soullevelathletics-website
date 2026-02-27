@@ -16,6 +16,7 @@ export default function ContactForm() {
       const response = await fetch('/api/contact', {
         method: 'POST',
         body: data,
+        credentials: 'same-origin',
       });
 
       if (response.ok) {
