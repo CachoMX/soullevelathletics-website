@@ -8,7 +8,7 @@ export const POST: APIRoute = async ({ request }) => {
     // Validate SendGrid API key
     const apiKey = import.meta.env.SENDGRID_API_KEY;
     if (!apiKey) {
-      console.error('SENDGRID_API_KEY is not configured');
+      console.error('SENDGRID_API_KEY is not configured in environment variables');
       return new Response(
         JSON.stringify({ error: 'Email service not configured' }),
         { status: 500, headers: { 'Content-Type': 'application/json' } }
