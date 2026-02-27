@@ -65,7 +65,7 @@ This email was sent from the Soul Level Athletics contact form.
 
     // Send email
     const msg = {
-      to: ['coachchrisjohnson1@gmail.com', 'caragon@me.com'],
+      to: 'coachchrisjohnson1@gmail.com',
       from: 'noreply@soullevelathletics.com', // Must be verified in SendGrid
       subject: `New Contact Form: ${name}`,
       text: emailContent,
