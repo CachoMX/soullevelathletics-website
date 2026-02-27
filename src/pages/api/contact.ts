@@ -1,6 +1,8 @@
 import type { APIRoute } from 'astro';
 import sgMail from '@sendgrid/mail';
 
+export const prerender = false;
+
 export const POST: APIRoute = async ({ request }) => {
   try {
     // Validate SendGrid API key
